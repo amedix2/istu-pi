@@ -1,4 +1,6 @@
 def is_prime(n: int) -> bool:
+    if not isinstance(n, int):
+        raise TypeError("Аргумент должен быть целым числом")
     if n <= 1:
         return False
     if n == 2:
