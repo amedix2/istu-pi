@@ -1,3 +1,5 @@
+from math import isqrt
+
 def is_prime(n: int) -> bool:
     if not isinstance(n, int):
         raise TypeError("Аргумент должен быть целым числом")
@@ -7,7 +9,9 @@ def is_prime(n: int) -> bool:
         return True
     if n % 2 == 0:
         return False
-    for i in range(3, int(n**0.5) + 1, 2):
+    
+    sqrt_n = isqrt(n) + 1
+    for i in range(3, sqrt_n, 2):
         if n % i == 0:
             return False
     return True
